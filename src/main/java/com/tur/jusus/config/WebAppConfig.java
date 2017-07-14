@@ -13,7 +13,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.tur.jusus.controller")
+@ComponentScan({"com.tur.jusus.controller","com.tur.jusus.service"})
 public class WebAppConfig extends WebMvcConfigurerAdapter {
 
     @Override

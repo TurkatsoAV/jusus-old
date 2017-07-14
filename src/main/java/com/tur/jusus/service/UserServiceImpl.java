@@ -1,7 +1,9 @@
 package com.tur.jusus.service;
 
 import com.tur.jusus.entity.User;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements UserService {
 
     @Override
