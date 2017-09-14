@@ -13,15 +13,15 @@
 </head>
 <body>
 <div class="container">
-    <div style="margin-top: 20px;">
+    <div class="jumbotron" style="margin-top: 20px;">
         <h1>Главная страница</h1>
-        <p>Содержание страницы</p>
+        <p class="lead">Содержание страницы</p>
         <sec:authorize access="!isAuthenticated()">
-        <p><a class="btn" href="<c:url value="/login" />">Войти</a></p>
+        <p><a class="btn btn-lg btn-success" href="<c:url value="/login" />" role="button">Войти</a></p>
         </sec:authorize>
         <sec:authorize access="isAuthenticated()">
         <p>Ваш логин: <sec:authentication property="principal.username" /></p>
-        <p><a class="btn" href="<c:url value="/logout" />">Выйти</a></p>
+        <p><a class="btn btn-lg btn-danger" href="<c:url value="/logout" />" role="button">Выйти</a></p>
         </sec:authorize>
     </div>
 </div>
