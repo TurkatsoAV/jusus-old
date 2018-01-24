@@ -2,6 +2,12 @@
 <!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 
+    <!-- Login Definition -->
+    <definition name="login-definition" template="/WEB-INF/pages/tiles/layouts/loginLayout.jsp">
+        <put-attribute name="title" value="Вход" />
+        <put-attribute name="body" value="" />
+    </definition>
+
     <!-- Base Definition -->
     <definition name="base-definition" template="/WEB-INF/pages/tiles/layouts/defaultLayout.jsp">
         <put-attribute name="title" value="" />
@@ -17,8 +23,7 @@
     </definition>
 
     <!-- Login Page -->
-    <definition name="login" extends="base-definition">
-        <put-attribute name="title" value="Login" />
+    <definition name="login" extends="login-definition">
         <put-attribute name="body" value="/WEB-INF/pages/login.jsp" />
     </definition>
 
