@@ -3,6 +3,11 @@
 <c:url value="/j_spring_security_check" var="loginUrl" />
 <div class="container">
     <div class="card card-container">
+        <c:if test="${param.error == 'true'}">
+            <p class="bg-danger text-center">
+                Введёные данные не верны
+            </p>
+        </c:if>
         <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
         <p id="profile-name" class="profile-name-card"></p>
         <form class="form-signin" action="${loginUrl}" method="post">
