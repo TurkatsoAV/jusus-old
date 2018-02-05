@@ -21,7 +21,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <javax.servlet-api>3.1.0</javax.servlet-api>
         <apachetiles.version>3.0.8</apachetiles.version>
+        <spring.mvc>4.3.9.RELEASE</spring.mvc>
+        <spring-security>4.2.3.RELEASE</spring-security>
+        <spring-data-jpa>2.0.3.RELEASE</spring-data-jpa>
+        <hibernate>5.2.12.Final</hibernate>
     </properties>
 
     <build>
@@ -32,8 +37,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.6.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -59,12 +64,12 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>4.3.9.RELEASE</version>
+            <version>${spring.mvc}</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <version>${javax.servlet-api}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -75,22 +80,22 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <version>4.2.3.RELEASE</version>
+            <version>${spring-security}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
-            <version>4.2.3.RELEASE</version>
+            <version>${spring-security}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-taglibs</artifactId>
-            <version>4.2.3.RELEASE</version>
+            <version>${spring-security}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
-            <version>2.0.3.RELEASE</version>
+            <version>${spring-data-jpa}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.tiles</groupId>
@@ -115,7 +120,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>5.2.12.Final</version>
+            <version>${hibernate}</version>
         </dependency>
     </dependencies>
 
