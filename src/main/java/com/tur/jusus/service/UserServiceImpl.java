@@ -1,17 +1,18 @@
 package com.tur.jusus.service;
 
 import com.tur.jusus.entity.User;
+import com.tur.jusus.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
 
+    @Autowired
+    private UserRepository userRepository;
+
     @Override
     public User getUser(String login) {
-        User user = new User();
-        user.setLogin(login);
-        user.setPassword("$2a$04$O/92gETCE0172oQRHgXZ3uSmuLDjFgdY36LqEBflKpEBOuPamQF46");
-
-        return user;
+        return userRepository.findByLogin(login);
     }
 }

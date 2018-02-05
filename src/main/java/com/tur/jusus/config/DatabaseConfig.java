@@ -27,9 +27,9 @@ public class DatabaseConfig {
 
     private static final String PROP_JNDI_DATA_SOURCE = "jndi.dataSource";
     private static final String ENTITY_MANAGER_PACKAGES_TO_SCAN = "com.tur.jusus.entity";
-    private static final String PROP_HIBERNATE_DIALECT = "db.hibernate.dialect";
-    private static final String PROP_HIBERNATE_SHOW_SQL = "db.hibernate.show_sql";
-    private static final String PROP_HIBERNATE_HBM2DDL_AUTO = "db.hibernate.hbm2ddl.auto";
+    private static final String PROP_HIBERNATE_DIALECT = "hibernate.dialect";
+    private static final String PROP_HIBERNATE_SHOW_SQL = "hibernate.show_sql";
+    private static final String PROP_HIBERNATE_HBM2DDL_AUTO = "hibernate.hbm2ddl.auto";
 
     @Bean
     public DataSource dataSource() {
