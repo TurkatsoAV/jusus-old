@@ -23,8 +23,8 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <javax.servlet-api>3.1.0</javax.servlet-api>
         <apachetiles.version>3.0.8</apachetiles.version>
-        <spring.mvc>4.3.9.RELEASE</spring.mvc>
-        <spring-security>4.2.3.RELEASE</spring-security>
+        <spring.mvc>5.0.3.RELEASE</spring.mvc>
+        <spring-security>5.0.1.RELEASE</spring-security>
         <spring-data-jpa>2.0.3.RELEASE</spring-data-jpa>
         <hibernate>5.2.12.Final</hibernate>
     </properties>
