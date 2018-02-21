@@ -4,6 +4,6 @@ import com.tur.jusus.entity.User;
 
 public interface UserService {
 
-    User getUser(String login);
+    User getUserByLogin(String login);
 
 }

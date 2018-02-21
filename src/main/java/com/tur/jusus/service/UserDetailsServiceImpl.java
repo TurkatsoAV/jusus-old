@@ -21,7 +21,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        User user = userService.getUser(s);
+        User user = userService.getUserByLogin(s);
         Set<GrantedAuthority> roles = new HashSet<>();
         for (Role role : user.getRoles()) {
             roles.add(new SimpleGrantedAuthority(role.getName()));
