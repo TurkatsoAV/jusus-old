@@ -1,7 +1,7 @@
 package com.tur.jusus.service;
 
+import com.tur.jusus.entity.Role;
 import com.tur.jusus.entity.User;
-import com.tur.jusus.entity.enums.UserRoleEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,8 +23,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         User user = userService.getUser(s);
         Set<GrantedAuthority> roles = new HashSet<>();
-        roles.add(new SimpleGrantedAuthority(UserRoleEnum.USER.name()));
-
+        for (Role role : user.getRoles()) {
+            roles.add(new SimpleGrantedAuthority(role.getName()));
+        }
         UserDetails userDetails = new org.springframework.security.core.userdetails.User(user.getLogin(),
                 user.getPassword(), roles);
 

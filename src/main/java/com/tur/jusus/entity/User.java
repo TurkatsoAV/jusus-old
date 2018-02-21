@@ -1,29 +1,28 @@
 package com.tur.jusus.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
 public class User {
 
+    private Long id;
+    private String login;
+    private String password;
+    private Set<Role> roles;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     @Column(name = "login", nullable = false, unique = true)
-    private String login;
-
-    private String password;
-
-    public User(String login, String password) {
-        this.login = login;
-        this.password = password;
-    }
-
-    public User() {
-
-    }
-
     public String getLogin() {
         return login;
     }
@@ -38,5 +37,15 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }
