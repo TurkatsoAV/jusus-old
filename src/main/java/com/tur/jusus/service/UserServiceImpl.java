@@ -21,7 +21,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RoleRepository roleRepository;
 
-
     @Override
     public User getUserByLogin(String login) {
         return userRepository.findByLogin(login);
